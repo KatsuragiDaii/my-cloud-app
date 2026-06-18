@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Hello from Cloud Computing App!',
+    message: 'Hello from Cloud Computing App! - BERHASIL DIUBAH DARI LAPTOP A',
     timestamp: new Date().toISOString(),
     env: process.env.NODE_ENV || 'development',
     server: 'VPS Ubuntu'
