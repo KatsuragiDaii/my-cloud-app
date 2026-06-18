@@ -1,0 +1,20 @@
+# 1. Gunakan image resmi Node.js sebagai base
+FROM node:20-alpine
+
+# 2. Tentukan folder kerja di dalam container
+WORKDIR /app
+
+# 3. Copy file package.json dan package-lock.json
+COPY package*.json ./
+
+# 4. Install dependencies aplikasi
+RUN npm install --production
+
+# 5. Copy seluruh kode aplikasi dari Laptop A ke dalam container
+COPY . .
+
+# 6. Buka port 3000 di dalam container
+EXPOSE 3000
+
+# 7. Perintah untuk menjalankan aplikasi
+CMD ["node", "server.js"]
